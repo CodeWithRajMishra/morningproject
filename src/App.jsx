@@ -1,19 +1,25 @@
-const App=()=>{
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Service from "./pages/Service";
+import Contact from "./pages/Contact";
+import Nopage from "./pages/Nopage";
+const App =() =>{
   return(
     <>
-         <h1> Hello we are Cybrom Students</h1>
-         <h2> We are designing Box Models</h2>
-
-         <div id="box1">
-            <div id="box2">
-               <div id="box3">         
-                    <div id="box4">
-                    CYBROM
-                     </div>
-               </div>
-            </div>
-         </div>
-
+   <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Layout/>} >
+           <Route index element={<Home/>} />
+           <Route path="/home" element={<Home/>} />
+           <Route path="/about" element={<About/>} />
+           <Route path="/service" element={<Service/>} />
+           <Route path="/contact" element={<Contact/>} />
+           <Route path="*" element={<Nopage/>} />          
+          </Route>
+      </Routes>
+   </BrowserRouter>    
     </>
   )
 }
