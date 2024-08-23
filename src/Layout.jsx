@@ -1,25 +1,17 @@
-import { Link, Outlet } from "react-router-dom"
-
-
-
+import { Outlet } from "react-router-dom";
+import Topmenu from "./components/Topmenu";
+import Footer from "./components/Footer";
 const Layout=()=>{
     return(
         <>
-           <Link to="home">Home</Link> |
-           <Link to="about">About us</Link> |
-           <Link to="service">Our Services</Link> |
-           <Link to="contact" >Contact us</Link>
-           <hr size="4" color="blue"/>
+          <Topmenu/>
 
-               <Outlet />
+          <Outlet/>
 
-           <hr size="4" color="blue"/>
-           www.myconpany.com all right reserved. 2024
-
+          <Footer/>
         
         </>
     )
 }
 
-
-export default  Layout;
+export default Layout;
