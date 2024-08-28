@@ -34,7 +34,7 @@ const ProductDisplay=()=>{
         <>
           <div id="productData">
              <div>
-           <img   src={`public/images/${myPro.images}`} style={{height:"300px", width:"300px"}} />
+           <img   src={Pro.images} style={{height:"300px", width:"300px"}} />
              </div>
              <div>
             <h2>   Product Name : {myPro.name} </h2> 

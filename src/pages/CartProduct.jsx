@@ -35,7 +35,7 @@ const checkOut=()=>{
          return(
             <>
               <tr>
-                <td> <img src={"public/images/"+key.image}  width="100" height="80" /></td>
+                <td> <img src={key.image}  width="100" height="80" /></td>
                 <td>{key.name}</td>
                 <td>{key.description}</td>
                 <td>{key.price}</td>

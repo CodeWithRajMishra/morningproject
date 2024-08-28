@@ -34,7 +34,7 @@ const SearchProduct=()=>{
     return(
       <>
     <Card style={{width:"250px", marginLeft:"10px", marginRight:"10px", marginBottom:"20px"}}>
-    <Card.Img variant="top" src={"public/images/"+key.images} style={{height:"250px"}} />
+    <Card.Img variant="top" src={key.images} style={{height:"250px"}} />
     <Card.Body>
       <Card.Title style={{color:"blue", fontSize:"14px"}}>{key.name}</Card.Title>
       <Card.Text>

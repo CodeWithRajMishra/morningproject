@@ -8,6 +8,7 @@ import KidsCat from "./pages/KidsCat";
 import MensCat from "./pages/MensCat";
 import WomensCat from "./pages/WomensCat";
 import CheckOut from "./pages/CheckOut";
+import PaymentComplete from "./pages/PaymentComplete";
 
 const App=()=>
 {
@@ -25,6 +26,7 @@ const App=()=>
               <Route path="menscat" element={<MensCat/>} />
               <Route path="womenscat" element={<WomensCat/>}/>
               <Route path="checkout" element={<CheckOut/>}/>
+              <Route path="paycomp" element={<PaymentComplete/>}/>
             </Route>
           </Routes>
         </BrowserRouter>
