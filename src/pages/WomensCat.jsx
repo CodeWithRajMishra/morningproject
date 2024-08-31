@@ -36,7 +36,6 @@ const dataSendCart=(key)=>
       <Card.Img variant="top" src={key.images} style={{height:"250px"}} />
       <Card.Body>
        
-
         <Card.Title style={{color:"blue", fontSize:"14px"}} 
         onClick={()=>{dataSendCart(key)}}>
         <a href='#'>  {key.name} </a> 

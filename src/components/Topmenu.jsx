@@ -8,13 +8,28 @@ import { FaSearch } from "react-icons/fa";
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 const Topmenu=()=>{
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [product, setProduct]=useState("");
 
   const myCart= useSelector((state)=>state.mycart.cart);
   const dataLength= myCart.length;
   const navigate= useNavigate();
 
-    return(
+ const handleSearch=()=>{
+     navigate(`/searchpro/${product}`)
+     setShow(false);
+ }
+
+return(
         <>
   <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" style={{position:"sticky", top:0, zIndex:"1"}}>
       <Container>
@@ -45,7 +60,9 @@ const Topmenu=()=>{
             {dataLength>=1?  <span id="tokri"> {dataLength} </span> :""}         
             </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-            <FaSearch />
+
+            <FaSearch onClick={handleShow} />
+            
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -53,6 +70,22 @@ const Topmenu=()=>{
     </Navbar>
 
 
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Search Product</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+         Enter Product name:  <input type="text" value={product} onChange={(e)=>{setProduct(e.target.value)}} />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleSearch}>
+            Search
+          </Button>
+        </Modal.Footer>
+      </Modal>
     
 
 

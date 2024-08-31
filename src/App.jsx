@@ -9,6 +9,7 @@ import MensCat from "./pages/MensCat";
 import WomensCat from "./pages/WomensCat";
 import CheckOut from "./pages/CheckOut";
 import PaymentComplete from "./pages/PaymentComplete";
+import ProductSearch from "./pages/ProductSearch";
 
 const App=()=>
 {
@@ -27,6 +28,7 @@ const App=()=>
               <Route path="womenscat" element={<WomensCat/>}/>
               <Route path="checkout" element={<CheckOut/>}/>
               <Route path="paycomp" element={<PaymentComplete/>}/>
+              <Route path="searchpro/:prd" element={<ProductSearch/>}/>
             </Route>
           </Routes>
         </BrowserRouter>
